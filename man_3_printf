@@ -3,8 +3,10 @@
 _printf - Prints data and format
 .SH SYNOPSIS
 .B #include "holberton.h"
+	#include <stdlib.h>
+	#include <stdarg.h>
 
-.B int _printf(const char *format, ...);
+.B int _printf(const char *[FORMAT], ...);
 
 .SH DESCRIPTION
 .B The functions in the _printf() produce output according to its format, print ARGUMENT(s) according to FORMAT:
