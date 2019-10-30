@@ -14,17 +14,19 @@ int cases_2(va_list our_list, const char *module)
 
 	switch (*module)
 	{
+		case 'c':
+		count += case_c(our_list);
+				break;
 		case 'd':
-			count += case_digit(our_list);
+			count = case_digit(our_list);
 			break;
 		case 'i':
-			count += case_digit(our_list);
+			count = case_digit(our_list);
 			break;
 		case '\0':
-			return (-1);
+			return (0);
 		default:
-			_our_write('%');
-			break;
+			return (-1);
 	}
 
 	return (count);
@@ -56,9 +58,6 @@ int _printf(const char *format, ...)
 			format++;
 			switch (*format)
 			{
-			case 'c':
-				count += case_c(our_list);
-				break;
 			case 's':
 				count_null = case_s(our_list);
 				if (count_null == (-1))
@@ -70,8 +69,10 @@ int _printf(const char *format, ...)
 				count++;
 				break;
 			default:
-				count += cases_2(our_list, format);
-				count++;
+				count = cases_2(our_list, format);
+				if (count == (-1))
+					format--;
+				count = 0;
 				break;
 			}
 		}

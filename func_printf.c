@@ -35,7 +35,7 @@ int case_s(va_list our_str)
 	{
 		for (x = 0; x < 6; x++)
 		_our_write(our_null[x]);
-		return (0);
+		return (x);
 	}
 	else if (*argument == '\0')
 	{
