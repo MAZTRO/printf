@@ -20,6 +20,8 @@ int cases_2(va_list our_list, const char *module)
 		case 'i':
 			count += case_digit(our_list);
 			break;
+		case '\0':
+			return (-1);
 		default:
 			_our_write('%');
 			break;
