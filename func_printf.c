@@ -54,7 +54,6 @@ int case_s(va_list our_str)
 /**
  * recur - Print anything
  * @our_digit: the string that i have in the input.
- * @count: counter
  * Return: Always 0 if the functions works.
  */
 
