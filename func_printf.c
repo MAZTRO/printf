@@ -79,7 +79,7 @@ int case_s(va_list our_str)
  * Return: Always 0 if the functions works.
  */
 
-int recur(long long int our_digit, int count)
+int recur(long int our_digit, int count)
 {
 	if (our_digit < 0)
 	{
@@ -102,10 +102,10 @@ int recur(long long int our_digit, int count)
 
 int case_digit(va_list our_digit)
 {
-	long long int digit = 0;
+	long int digit = 0;
 	int count = 0, count_total = 0;
 
-	digit = va_arg(our_digit, long long int);
+	digit = va_arg(our_digit, long int);
 	count_total = recur(digit, count);
 
 	return (count_total - 1);
