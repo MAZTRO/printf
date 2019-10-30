@@ -3,6 +3,7 @@
 /**
  * percent - writes the character c to stdout
  * @module: The character to print
+ * @count: the counter
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
@@ -22,9 +23,8 @@ int percent(const char *module, int count)
 	return (count);
 }
 /**
- * case_s - writes the character c to stdout
+ * case_c - writes the character c to stdout
  * @our_char: Lol
- * @count: Lol
  * Return: On success 1.
  */
 
@@ -74,7 +74,8 @@ int case_s(va_list our_str)
 
 /**
  * recur - Print anything
- * @format: the string that i have in the input.
+ * @our_digit: the string that i have in the input.
+ * @count: counter
  * Return: Always 0 if the functions works.
  */
 
@@ -84,20 +85,18 @@ int recur(long long int our_digit, int count)
 	{
 		_our_write('-');
 		our_digit = -our_digit;
-    }
+	}
 
-    if (our_digit / 10)
+	if (our_digit / 10)
 		recur(our_digit / 10, count++);
 
-    _our_write(our_digit % 10 + '0');
+	_our_write(our_digit % 10 + '0');
 	return (count);
 }
 
 /**
  * case_digit - Print anything
- * @str the string that i have in the input.
- * @our_var: the integer to convert.
- * @base: the base of the number, always 10
+ * @our_digit: digits
  * Return: the new string.
 */
 
